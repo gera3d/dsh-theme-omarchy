@@ -1,0 +1,258 @@
+/* ==========================================================================
+   dsh-theme-omarchy: Opinionated Visual Design System
+   Inspired by David Heinemeier Hansson's (DHH) Omarchy Linux Distribution
+   ========================================================================== */
+
+/* ── 1. Global Atmospheric Canvas & Lighting ── */
+body[data-omarchy-theme] {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Theme 1: Giants — Warm ink on aged paper with sepia ambient lighting */
+body[data-omarchy-theme="omarchy-giants"] {
+  background-color: #27241f !important;
+  background-image: 
+    radial-gradient(ellipse 90% 55% at 50% -12%, rgba(151, 120, 109, 0.16), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(16, 14, 12, 0.6), transparent 60%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Theme 2: Diablo Dreams — Lamborghini Diablo golden-bronze glow */
+body[data-omarchy-theme="omarchy-diablo"] {
+  background-color: #100e0a !important;
+  background-image: 
+    radial-gradient(ellipse 85% 50% at 50% -10%, rgba(171, 106, 87, 0.16), transparent 70%),
+    radial-gradient(circle at 95% 95%, rgba(40, 38, 35, 0.25), transparent 50%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Theme 3: Zonda Zoom — Pagani carbon black with icy blue halo */
+body[data-omarchy-theme="omarchy-zonda"] {
+  background-color: #141313 !important;
+  background-image: 
+    radial-gradient(ellipse 85% 50% at 50% -10%, rgba(107, 127, 190, 0.18), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(10, 10, 10, 0.8), transparent 60%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Theme 4: Jade Horse — Deep pine forest with glowing nephrite jade */
+body[data-omarchy-theme="omarchy-jade"] {
+  background-color: #0e1411 !important;
+  background-image: 
+    radial-gradient(ellipse 85% 50% at 50% -10%, rgba(91, 158, 125, 0.16), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(5, 8, 7, 0.8), transparent 60%) !important;
+  background-attachment: fixed !important;
+}
+
+/* ── 2. Hyprland-Inspired Tiling Windows & Floating Separation ── */
+body[data-omarchy-theme] [class*="sidebarCol"],
+body[data-omarchy-theme] nav {
+  background: var(--dsw-specific-sidebar-fill) !important;
+  border-right: 1px solid var(--dsw-alias-border-l1) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+/* Subtle hairline divider between rails and panels */
+body[data-omarchy-theme] [class*="headerActions"],
+body[data-omarchy-theme] [class*="titleBar"],
+body[data-omarchy-theme] header {
+  border-bottom: 1px solid var(--dsw-alias-border-l1) !important;
+  backdrop-filter: blur(16px) !important;
+}
+
+/* Tactile Session and Panel Nav Rows */
+body[data-omarchy-theme] [class*="panelRow"],
+body[data-omarchy-theme] [class*="sessionButton"],
+body[data-omarchy-theme] [class*="navItem"] {
+  border-radius: 8px !important;
+  margin: 1px 4px !important;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body[data-omarchy-theme] [class*="panelRow"]:hover,
+body[data-omarchy-theme] [class*="sessionButton"]:hover {
+  background: var(--dsw-alias-interactive-bg-hover) !important;
+  transform: translateX(2px) !important;
+}
+
+body[data-omarchy-theme] [class*="panelRow"][data-selected="true"],
+body[data-omarchy-theme] [class*="sessionButton"][data-selected="true"] {
+  background: var(--dsw-alias-interactive-bg-active) !important;
+  box-shadow: inset 3px 0 0 0 var(--dsw-alias-brand-primary) !important;
+}
+
+/* ── 3. The Floating Island Composer (Raycast / Walker Command Bar) ── */
+body[data-omarchy-theme] [data-composer-card="true"] {
+  border: 1px solid var(--dsw-alias-border-l2) !important;
+  border-radius: 16px !important;
+  background: var(--dsw-alias-bg-layer-1) !important;
+  backdrop-filter: blur(28px) saturate(150%) !important;
+  box-shadow: 
+    0 16px 48px -12px rgba(0, 0, 0, 0.65),
+    0 0 0 1px var(--dsw-alias-border-l1),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08) !important;
+  padding: 4px 6px !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+body[data-omarchy-theme] [data-composer-card="true"]:focus-within {
+  border-color: var(--dsw-alias-brand-primary) !important;
+  box-shadow: 
+    0 24px 60px -8px rgba(0, 0, 0, 0.75),
+    0 0 0 2px var(--dsw-alias-brand-primary),
+    0 0 24px -4px var(--dsw-alias-brand-primary),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Composer text styling */
+body[data-omarchy-theme] [data-composer-card="true"] [contenteditable="true"],
+body[data-omarchy-theme] [data-composer-card="true"] textarea {
+  color: var(--dsw-alias-label-primary) !important;
+  font-family: inherit !important;
+  line-height: 1.6 !important;
+  font-size: 14px !important;
+}
+
+/* Composer action buttons */
+body[data-omarchy-theme] [data-composer-card="true"] button {
+  border-radius: 8px !important;
+  transition: all 0.15s ease !important;
+}
+
+body[data-omarchy-theme] [data-composer-card="true"] button:hover {
+  background: var(--dsw-alias-interactive-bg-hover) !important;
+  transform: scale(1.05) !important;
+}
+
+/* ── 4. Tactile Message Bubbles & Typography ── */
+body[data-omarchy-theme] [class*="bubble"] {
+  border: 1px solid var(--dsw-alias-border-l2) !important;
+  border-radius: 14px !important;
+  background: var(--dsw-specific-bubble) !important;
+  box-shadow: 
+    0 4px 20px -2px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.06) !important;
+  padding: 12px 16px !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.65 !important;
+  color: var(--dsw-alias-label-primary) !important;
+}
+
+/* User Message bubble distinction */
+body[data-omarchy-theme] [class*="userMessage"],
+body[data-omarchy-theme] [class*="turnSpacer"] + div [class*="bubble"] {
+  border-color: var(--dsw-alias-border-l3) !important;
+}
+
+/* Markdown Headings */
+body[data-omarchy-theme] h1,
+body[data-omarchy-theme] h2,
+body[data-omarchy-theme] h3,
+body[data-omarchy-theme] h4 {
+  color: var(--dsw-alias-label-primary) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+}
+
+body[data-omarchy-theme] h2 {
+  border-bottom: 1px solid var(--dsw-alias-border-l1) !important;
+  padding-bottom: 6px !important;
+  margin-top: 24px !important;
+}
+
+/* Markdown Blockquotes */
+body[data-omarchy-theme] blockquote {
+  border-left: 3px solid var(--dsw-alias-brand-primary) !important;
+  background: var(--dsw-alias-interactive-bg-hover) !important;
+  padding: 8px 14px !important;
+  border-radius: 0 8px 8px 0 !important;
+  color: var(--dsw-alias-label-secondary) !important;
+  font-style: normal !important;
+  margin: 12px 0 !important;
+}
+
+/* ── 5. Terminal-Grade Code Blocks (Ghostty / Neovim Vibe) ── */
+body[data-omarchy-theme] pre {
+  border: 1px solid var(--dsw-alias-border-l2) !important;
+  border-radius: 10px !important;
+  background: var(--dsw-alias-markdown-code-block) !important;
+  box-shadow: 
+    inset 0 2px 8px rgba(0, 0, 0, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  padding: 14px 16px !important;
+  margin: 12px 0 !important;
+}
+
+body[data-omarchy-theme] code,
+body[data-omarchy-theme] pre code {
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', Menlo, monospace !important;
+  font-size: 12.5px !important;
+  line-height: 1.6 !important;
+}
+
+/* Inline code pill */
+body[data-omarchy-theme] p code,
+body[data-omarchy-theme] li code {
+  background: var(--dsw-alias-markdown-inline-code) !important;
+  border: 1px solid var(--dsw-alias-border-l1) !important;
+  border-radius: 5px !important;
+  padding: 1px 5px !important;
+  font-size: 12px !important;
+  color: var(--dsw-alias-brand-primary) !important;
+}
+
+/* ── 6. Precision Micro-Scrollbars ── */
+body[data-omarchy-theme] ::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+}
+
+body[data-omarchy-theme] ::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+body[data-omarchy-theme] ::-webkit-scrollbar-thumb {
+  background: var(--dsh-scrollbar-thumb) !important;
+  border-radius: 999px !important;
+  transition: background 0.2s ease !important;
+}
+
+body[data-omarchy-theme] ::-webkit-scrollbar-thumb:hover {
+  background: var(--dsh-scrollbar-thumb-hover) !important;
+}
+
+/* ── 7. Frosted Glass Popovers, Menus & Dialogs ── */
+body[data-omarchy-theme] [role="dialog"],
+body[data-omarchy-theme] [role="menu"],
+body[data-omarchy-theme] [class*="modal"],
+body[data-omarchy-theme] [class*="popover"],
+body[data-omarchy-theme] [class*="dropdown"] {
+  border: 1px solid var(--dsw-alias-border-l3) !important;
+  border-radius: 14px !important;
+  background: var(--dsw-alias-bg-layer-1) !important;
+  backdrop-filter: blur(32px) saturate(160%) !important;
+  box-shadow: 
+    0 24px 64px -12px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Buttons inside Dialogs */
+body[data-omarchy-theme] button[data-primary="true"],
+body[data-omarchy-theme] button[class*="primary"] {
+  background: var(--dsw-alias-brand-primary) !important;
+  color: var(--dsw-alias-label-primary) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 8px -1px var(--dsw-alias-brand-primary) !important;
+  transition: all 0.15s ease !important;
+}
+
+body[data-omarchy-theme] button[data-primary="true"]:hover,
+body[data-omarchy-theme] button[class*="primary"]:hover {
+  filter: brightness(1.1) !important;
+  transform: translateY(-1px) !important;
+}
