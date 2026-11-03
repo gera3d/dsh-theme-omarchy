@@ -10,8 +10,39 @@ body[data-omarchy-theme] {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 1. Tokyo Night — Omarchy's Flagship Default */
+/* ── Theme 1: Tokyo Night — Omarchy's Flagship Default ── */
 body[data-omarchy-theme="omarchy-tokyonight"] {
+  --dsw-alias-bg-base: #1a1b26 !important;
+  --dsw-alias-bg-layer-1: #1f2335 !important;
+  --dsw-alias-bg-layer-2: #24283b !important;
+  --dsw-alias-bg-layer-3: #16161e !important;
+  --dsw-alias-bg-overlay: #1f2335 !important;
+  --dsw-specific-sidebar-fill: #13141c !important;
+  --dsw-specific-bubble: #1f2335 !important;
+  --dsw-specific-bubble-highlight: #292e42 !important;
+  --dsw-specific-input-major: #16161e !important;
+  --dsw-alias-markdown-code-block: #16161e !important;
+  --dsw-alias-markdown-code-block-banner: #13141c !important;
+  --dsw-alias-markdown-inline-code: #24283b !important;
+  --dsw-alias-markdown-tag: #292e42 !important;
+  --dsw-alias-label-primary: #c0caf5 !important;
+  --dsw-alias-label-secondary: #9aa5ce !important;
+  --dsw-alias-label-tertiary: #565f89 !important;
+  --dsw-alias-label-caption: #787c99 !important;
+  --dsw-alias-brand-primary: #7aa2f7 !important;
+  --dsw-alias-link: #7dcfff !important;
+  --dsw-alias-button-primary-fill: #7aa2f7 !important;
+  --dsw-alias-button-primary-hover: #89b4fa !important;
+  --dsw-alias-interactive-bg-hover: rgba(122, 162, 247, 0.08) !important;
+  --dsw-alias-interactive-bg-active: rgba(122, 162, 247, 0.16) !important;
+  --dsw-alias-bg-document-selection: rgba(40, 52, 87, 0.7) !important;
+  --dsw-alias-border-l1: rgba(122, 162, 247, 0.10) !important;
+  --dsw-alias-border-l2: rgba(122, 162, 247, 0.18) !important;
+  --dsw-alias-border-l3: rgba(122, 162, 247, 0.28) !important;
+  --dsw-alias-border-l4: rgba(122, 162, 247, 0.38) !important;
+  --dsw-elevation-stroke-color: rgba(122, 162, 247, 0.15) !important;
+  --dsh-scrollbar-thumb: #292e42 !important;
+  --dsh-scrollbar-thumb-hover: #3b4261 !important;
   background-color: #1a1b26 !important;
   background-image: 
     radial-gradient(ellipse 90% 55% at 50% -10%, rgba(122, 162, 247, 0.18), transparent 70%),
@@ -19,8 +50,39 @@ body[data-omarchy-theme="omarchy-tokyonight"] {
   background-attachment: fixed !important;
 }
 
-/* 2. Catppuccin Mocha — Velvety slate with pastel mauve & sapphire */
+/* ── Theme 2: Catppuccin Mocha — Velvety Slate & Pastel Mauve ── */
 body[data-omarchy-theme="omarchy-catppuccin"] {
+  --dsw-alias-bg-base: #1e1e2e !important;
+  --dsw-alias-bg-layer-1: #252538 !important;
+  --dsw-alias-bg-layer-2: #313244 !important;
+  --dsw-alias-bg-layer-3: #181825 !important;
+  --dsw-alias-bg-overlay: #252538 !important;
+  --dsw-specific-sidebar-fill: #11111b !important;
+  --dsw-specific-bubble: #252538 !important;
+  --dsw-specific-bubble-highlight: #313244 !important;
+  --dsw-specific-input-major: #181825 !important;
+  --dsw-alias-markdown-code-block: #181825 !important;
+  --dsw-alias-markdown-code-block-banner: #11111b !important;
+  --dsw-alias-markdown-inline-code: #313244 !important;
+  --dsw-alias-markdown-tag: #45475a !important;
+  --dsw-alias-label-primary: #cdd6f4 !important;
+  --dsw-alias-label-secondary: #a6adc8 !important;
+  --dsw-alias-label-tertiary: #6c7086 !important;
+  --dsw-alias-label-caption: #7f849c !important;
+  --dsw-alias-brand-primary: #cba6f7 !important;
+  --dsw-alias-link: #89b4fa !important;
+  --dsw-alias-button-primary-fill: #cba6f7 !important;
+  --dsw-alias-button-primary-hover: #d9bdf9 !important;
+  --dsw-alias-interactive-bg-hover: rgba(203, 166, 247, 0.08) !important;
+  --dsw-alias-interactive-bg-active: rgba(203, 166, 247, 0.16) !important;
+  --dsw-alias-bg-document-selection: rgba(69, 71, 90, 0.7) !important;
+  --dsw-alias-border-l1: rgba(203, 166, 247, 0.10) !important;
+  --dsw-alias-border-l2: rgba(203, 166, 247, 0.18) !important;
+  --dsw-alias-border-l3: rgba(203, 166, 247, 0.28) !important;
+  --dsw-alias-border-l4: rgba(203, 166, 247, 0.38) !important;
+  --dsw-elevation-stroke-color: rgba(203, 166, 247, 0.15) !important;
+  --dsh-scrollbar-thumb: #313244 !important;
+  --dsh-scrollbar-thumb-hover: #45475a !important;
   background-color: #1e1e2e !important;
   background-image: 
     radial-gradient(ellipse 90% 55% at 50% -10%, rgba(203, 166, 247, 0.18), transparent 70%),
@@ -28,8 +90,39 @@ body[data-omarchy-theme="omarchy-catppuccin"] {
   background-attachment: fixed !important;
 }
 
-/* 3. Nord — Arctic polar night with frost cyan & snow storm */
+/* ── Theme 3: Nord — Arctic Polar Night & Frost Cyan ── */
 body[data-omarchy-theme="omarchy-nord"] {
+  --dsw-alias-bg-base: #2e3440 !important;
+  --dsw-alias-bg-layer-1: #3b4252 !important;
+  --dsw-alias-bg-layer-2: #434c5e !important;
+  --dsw-alias-bg-layer-3: #242933 !important;
+  --dsw-alias-bg-overlay: #3b4252 !important;
+  --dsw-specific-sidebar-fill: #242933 !important;
+  --dsw-specific-bubble: #3b4252 !important;
+  --dsw-specific-bubble-highlight: #434c5e !important;
+  --dsw-specific-input-major: #242933 !important;
+  --dsw-alias-markdown-code-block: #242933 !important;
+  --dsw-alias-markdown-code-block-banner: #1e222a !important;
+  --dsw-alias-markdown-inline-code: #3b4252 !important;
+  --dsw-alias-markdown-tag: #4c566a !important;
+  --dsw-alias-label-primary: #eceff4 !important;
+  --dsw-alias-label-secondary: #d8dee9 !important;
+  --dsw-alias-label-tertiary: #4c566a !important;
+  --dsw-alias-label-caption: #9aa3b2 !important;
+  --dsw-alias-brand-primary: #88c0d0 !important;
+  --dsw-alias-link: #81a1c1 !important;
+  --dsw-alias-button-primary-fill: #88c0d0 !important;
+  --dsw-alias-button-primary-hover: #8fbcbb !important;
+  --dsw-alias-interactive-bg-hover: rgba(136, 192, 208, 0.08) !important;
+  --dsw-alias-interactive-bg-active: rgba(136, 192, 208, 0.16) !important;
+  --dsw-alias-bg-document-selection: rgba(67, 76, 94, 0.7) !important;
+  --dsw-alias-border-l1: rgba(136, 192, 208, 0.10) !important;
+  --dsw-alias-border-l2: rgba(136, 192, 208, 0.18) !important;
+  --dsw-alias-border-l3: rgba(136, 192, 208, 0.28) !important;
+  --dsw-alias-border-l4: rgba(136, 192, 208, 0.38) !important;
+  --dsw-elevation-stroke-color: rgba(136, 192, 208, 0.15) !important;
+  --dsh-scrollbar-thumb: #434c5e !important;
+  --dsh-scrollbar-thumb-hover: #4c566a !important;
   background-color: #2e3440 !important;
   background-image: 
     radial-gradient(ellipse 90% 55% at 50% -10%, rgba(136, 192, 208, 0.18), transparent 70%),
@@ -37,8 +130,39 @@ body[data-omarchy-theme="omarchy-nord"] {
   background-attachment: fixed !important;
 }
 
-/* 4. Gruvbox Dark — Retro terminal warmth with vibrant orange */
+/* ── Theme 4: Gruvbox Dark — Retro Terminal Warmth ── */
 body[data-omarchy-theme="omarchy-gruvbox"] {
+  --dsw-alias-bg-base: #282828 !important;
+  --dsw-alias-bg-layer-1: #32302f !important;
+  --dsw-alias-bg-layer-2: #3c3836 !important;
+  --dsw-alias-bg-layer-3: #1d2021 !important;
+  --dsw-alias-bg-overlay: #32302f !important;
+  --dsw-specific-sidebar-fill: #1d2021 !important;
+  --dsw-specific-bubble: #32302f !important;
+  --dsw-specific-bubble-highlight: #3c3836 !important;
+  --dsw-specific-input-major: #1d2021 !important;
+  --dsw-alias-markdown-code-block: #1d2021 !important;
+  --dsw-alias-markdown-code-block-banner: #17191a !important;
+  --dsw-alias-markdown-inline-code: #3c3836 !important;
+  --dsw-alias-markdown-tag: #504945 !important;
+  --dsw-alias-label-primary: #ebdbb2 !important;
+  --dsw-alias-label-secondary: #d5c4a1 !important;
+  --dsw-alias-label-tertiary: #928374 !important;
+  --dsw-alias-label-caption: #a89984 !important;
+  --dsw-alias-brand-primary: #fe8019 !important;
+  --dsw-alias-link: #b8bb26 !important;
+  --dsw-alias-button-primary-fill: #fe8019 !important;
+  --dsw-alias-button-primary-hover: #ff9b44 !important;
+  --dsw-alias-interactive-bg-hover: rgba(254, 128, 25, 0.08) !important;
+  --dsw-alias-interactive-bg-active: rgba(254, 128, 25, 0.16) !important;
+  --dsw-alias-bg-document-selection: rgba(80, 73, 69, 0.7) !important;
+  --dsw-alias-border-l1: rgba(235, 219, 178, 0.10) !important;
+  --dsw-alias-border-l2: rgba(235, 219, 178, 0.18) !important;
+  --dsw-alias-border-l3: rgba(235, 219, 178, 0.28) !important;
+  --dsw-alias-border-l4: rgba(235, 219, 178, 0.38) !important;
+  --dsw-elevation-stroke-color: rgba(254, 128, 25, 0.15) !important;
+  --dsh-scrollbar-thumb: #3c3836 !important;
+  --dsh-scrollbar-thumb-hover: #504945 !important;
   background-color: #282828 !important;
   background-image: 
     radial-gradient(ellipse 90% 55% at 50% -10%, rgba(254, 128, 25, 0.18), transparent 70%),
@@ -46,8 +170,39 @@ body[data-omarchy-theme="omarchy-gruvbox"] {
   background-attachment: fixed !important;
 }
 
-/* 5. Rosé Pine — Soho minimalist pine with soft rose & seafoam */
+/* ── Theme 5: Rosé Pine — Soho Minimalist Aesthetic ── */
 body[data-omarchy-theme="omarchy-rosepine"] {
+  --dsw-alias-bg-base: #191724 !important;
+  --dsw-alias-bg-layer-1: #1f1d2e !important;
+  --dsw-alias-bg-layer-2: #26233a !important;
+  --dsw-alias-bg-layer-3: #14121d !important;
+  --dsw-alias-bg-overlay: #1f1d2e !important;
+  --dsw-specific-sidebar-fill: #14121d !important;
+  --dsw-specific-bubble: #1f1d2e !important;
+  --dsw-specific-bubble-highlight: #26233a !important;
+  --dsw-specific-input-major: #14121d !important;
+  --dsw-alias-markdown-code-block: #14121d !important;
+  --dsw-alias-markdown-code-block-banner: #100e17 !important;
+  --dsw-alias-markdown-inline-code: #26233a !important;
+  --dsw-alias-markdown-tag: #393552 !important;
+  --dsw-alias-label-primary: #e0def4 !important;
+  --dsw-alias-label-secondary: #908caa !important;
+  --dsw-alias-label-tertiary: #6e6a86 !important;
+  --dsw-alias-label-caption: #7c7895 !important;
+  --dsw-alias-brand-primary: #ebbcba !important;
+  --dsw-alias-link: #9ccfd8 !important;
+  --dsw-alias-button-primary-fill: #ebbcba !important;
+  --dsw-alias-button-primary-hover: #f0c8c6 !important;
+  --dsw-alias-interactive-bg-hover: rgba(235, 188, 186, 0.08) !important;
+  --dsw-alias-interactive-bg-active: rgba(235, 188, 186, 0.16) !important;
+  --dsw-alias-bg-document-selection: rgba(42, 40, 62, 0.7) !important;
+  --dsw-alias-border-l1: rgba(235, 188, 186, 0.10) !important;
+  --dsw-alias-border-l2: rgba(235, 188, 186, 0.18) !important;
+  --dsw-alias-border-l3: rgba(235, 188, 186, 0.28) !important;
+  --dsw-alias-border-l4: rgba(235, 188, 186, 0.38) !important;
+  --dsw-elevation-stroke-color: rgba(235, 188, 186, 0.15) !important;
+  --dsh-scrollbar-thumb: #26233a !important;
+  --dsh-scrollbar-thumb-hover: #393552 !important;
   background-color: #191724 !important;
   background-image: 
     radial-gradient(ellipse 90% 55% at 50% -10%, rgba(235, 188, 186, 0.18), transparent 70%),
@@ -55,21 +210,43 @@ body[data-omarchy-theme="omarchy-rosepine"] {
   background-attachment: fixed !important;
 }
 
-/* 6. Kanagawa — Japanese sumi-e ink with wave blue & spring green */
+/* ── Theme 6: Kanagawa — Japanese Woodblock Sumi-e ── */
 body[data-omarchy-theme="omarchy-kanagawa"] {
+  --dsw-alias-bg-base: #1f1f28 !important;
+  --dsw-alias-bg-layer-1: #2a2a37 !important;
+  --dsw-alias-bg-layer-2: #363646 !important;
+  --dsw-alias-bg-layer-3: #16161d !important;
+  --dsw-alias-bg-overlay: #2a2a37 !important;
+  --dsw-specific-sidebar-fill: #16161d !important;
+  --dsw-specific-bubble: #2a2a37 !important;
+  --dsw-specific-bubble-highlight: #363646 !important;
+  --dsw-specific-input-major: #16161d !important;
+  --dsw-alias-markdown-code-block: #16161d !important;
+  --dsw-alias-markdown-code-block-banner: #121217 !important;
+  --dsw-alias-markdown-inline-code: #363646 !important;
+  --dsw-alias-markdown-tag: #49473e !important;
+  --dsw-alias-label-primary: #dcd7ba !important;
+  --dsw-alias-label-secondary: #c8c093 !important;
+  --dsw-alias-label-tertiary: #727169 !important;
+  --dsw-alias-label-caption: #8a8980 !important;
+  --dsw-alias-brand-primary: #7e9cd8 !important;
+  --dsw-alias-link: #98bb6c !important;
+  --dsw-alias-button-primary-fill: #7e9cd8 !important;
+  --dsw-alias-button-primary-hover: #8eafe8 !important;
+  --dsw-alias-interactive-bg-hover: rgba(126, 156, 216, 0.08) !important;
+  --dsw-alias-interactive-bg-active: rgba(126, 156, 216, 0.16) !important;
+  --dsw-alias-bg-document-selection: rgba(45, 79, 103, 0.7) !important;
+  --dsw-alias-border-l1: rgba(220, 215, 186, 0.10) !important;
+  --dsw-alias-border-l2: rgba(220, 215, 186, 0.18) !important;
+  --dsw-alias-border-l3: rgba(220, 215, 186, 0.28) !important;
+  --dsw-alias-border-l4: rgba(220, 215, 186, 0.38) !important;
+  --dsw-elevation-stroke-color: rgba(126, 156, 216, 0.15) !important;
+  --dsh-scrollbar-thumb: #363646 !important;
+  --dsh-scrollbar-thumb-hover: #54546d !important;
   background-color: #1f1f28 !important;
   background-image: 
     radial-gradient(ellipse 90% 55% at 50% -10%, rgba(126, 156, 216, 0.18), transparent 70%),
     radial-gradient(circle at 100% 100%, rgba(152, 187, 108, 0.12), transparent 60%) !important;
-  background-attachment: fixed !important;
-}
-
-/* 7. Giants — Classic vintage ink on aged paper */
-body[data-omarchy-theme="omarchy-giants"] {
-  background-color: #27241f !important;
-  background-image: 
-    radial-gradient(ellipse 90% 55% at 50% -12%, rgba(151, 120, 109, 0.16), transparent 70%),
-    radial-gradient(circle at 100% 100%, rgba(16, 14, 12, 0.6), transparent 60%) !important;
   background-attachment: fixed !important;
 }
 
