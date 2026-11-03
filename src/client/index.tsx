@@ -1,9 +1,11 @@
 import React from 'react'
 import type { Context } from '@deepseek-ai/cordis'
-import { OMARCHY_THEMES } from '../palettes/index.ts'
-import { OmarchyThemeSelector } from './selector.tsx'
+import { OMARCHY_THEMES, DEFAULT_OMARCHY_THEME, type OmarchyThemeDefinition } from '../palettes/index.ts'
+import { OmarchyThemeSelector, applyThemeDirectly } from './selector.tsx'
 import selectorCss from './styles.css?raw'
 import omarchySystemCss from './omarchy-theme.css?raw'
+
+const STORAGE_KEY = 'dsh-omarchy-active-theme'
 
 export const inject = ['theme', 'slots']
 
@@ -18,14 +20,13 @@ interface ClientContext extends Context {
     setTheme(id: string): void
     register(definition: {
       id: string
-      colorScheme: 'light' | 'dark'
-      tokens: Record<string, string>
+      colorScheme?: 'dark' | 'light'
+      tokens?: Record<string, string>
     }): () => void
-    setFontFamily?(role: string, list: string): void
   }
   slots: {
     register(
-      descriptor: {
+      options: {
         name: string
         id?: string
         key?: string
@@ -40,7 +41,7 @@ interface ClientContext extends Context {
 
 /**
  * Client plugin entry point for dsh-theme-omarchy.
- * Injects the complete Omarchy design system (atmospheric lighting,
+ * Injects authentic Omarchy design system (atmospheric lighting,
  * tiling window borders, floating Raycast/Walker command bar, tactile cards),
  * registers Omarchy palettes into ctx.theme, and attaches the visual
  * palette picker to General settings.
@@ -58,33 +59,17 @@ export function apply(ctx: ClientContext): void {
     }
   }, 'dsh-theme-omarchy: stylesheet')
 
-  // 2. Synchronize active theme with document body attribute for deep styling
-  const syncBodyTheme = (snapshot: ThemeSnapshot) => {
+  // 2. Synchronize active theme with document body attribute and persist to localStorage
+  const syncBodyTheme = (targetId?: string) => {
     if (typeof document === 'undefined') return
-    const activeId = snapshot.preference || snapshot.active?.id
-    if (activeId && activeId.startsWith('omarchy-')) {
-      document.body.dataset.omarchyTheme = activeId
+    const activeId = targetId || localStorage.getItem(STORAGE_KEY) || DEFAULT_OMARCHY_THEME.id
+    const foundTheme = OMARCHY_THEMES.find((t) => t.id === activeId)
+    if (foundTheme) {
+      applyThemeDirectly(foundTheme)
     } else {
       delete document.body.dataset.omarchyTheme
     }
   }
-
-  ctx.effect(() => {
-    try {
-      syncBodyTheme(ctx.theme.getTheme())
-    } catch {}
-
-    const listener = (snapshot: ThemeSnapshot) => {
-      syncBodyTheme(snapshot)
-    }
-
-    ctx.on('theme/change', listener)
-    return () => {
-      if (typeof document !== 'undefined') {
-        delete document.body.dataset.omarchyTheme
-      }
-    }
-  }, 'dsh-theme-omarchy: sync body theme')
 
   // 3. Register all Omarchy themes into the theme runtime
   for (const item of OMARCHY_THEMES) {
@@ -103,13 +88,40 @@ export function apply(ctx: ClientContext): void {
     }, `dsh-theme-omarchy: register ${item.id}`)
   }
 
-  // 4. Mount interactive theme picker in Settings -> General
+  // 4. Initial theme synchronization & persistence listener
+  ctx.effect(() => {
+    try {
+      const stored = typeof localStorage !== 'undefined' ? localStorage.getItem(STORAGE_KEY) : null
+      const current = ctx.theme.getTheme()
+      const activeId = stored || current.preference || current.active?.id || DEFAULT_OMARCHY_THEME.id
+      syncBodyTheme(activeId)
+      if (stored && stored.startsWith('omarchy-')) {
+        ctx.theme.setTheme(stored)
+      }
+    } catch {}
+
+    const listener = (snapshot: ThemeSnapshot) => {
+      const nextId = snapshot.preference || snapshot.active?.id
+      if (nextId && nextId.startsWith('omarchy-')) {
+        syncBodyTheme(nextId)
+      }
+    }
+
+    ctx.on('theme/change', listener)
+    return () => {
+      if (typeof document !== 'undefined') {
+        delete document.body.dataset.omarchyTheme
+      }
+    }
+  }, 'dsh-theme-omarchy: sync body theme')
+
+  // 5. Mount interactive theme picker in Settings -> General
   ctx.slots.inject('settings.general.item', () => {
     ctx.slots.register(
       {
         name: 'settings.general.item',
-        id: 'omarchy-themes',
-        order: 10.5,
+        id: 'dsh-theme-omarchy.selector',
+        order: 25,
       },
       () => <OmarchyThemeSelector theme={ctx.theme} />
     )

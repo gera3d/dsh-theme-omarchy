@@ -20,51 +20,73 @@ The bundle hooks cleanly into DSH’s `@deepseek-ai/dsh-client-ui-theme` runtime
 
 ---
 
-## 🎨 Included Themes
+## 🎨 Included Themes (Omarchy Lineup)
 
-### 1. 🏛️ Giants (`omarchy-giants`)
-> *"Standing on the shoulders of giants"* — DHH’s tribute to computing pioneers (Turing, von Neumann, Lovelace).
+### 1. 🌃 Tokyo Night (`omarchy-tokyonight`) — *Omarchy Default*
+> The signature flagship theme of Omarchy desktop.
 
-* **Aesthetic**: Warm, low-contrast ink on aged paper.
-* **Canvas Background**: `#27241f` (soft brown-black)
-* **Sidebar / Rails**: `#1d1b17`
-* **Code / Terminal Inset**: `#141210`
-* **Text / Headings**: `#E1D5C2` (warm cream)
-* **Accent / Brand**: `#97786d` (dusty terracotta)
-* **Muted / Captions**: `#8a857a`
+* **Aesthetic**: Deep midnight navy canvas with neon cyan, electric blue, and violet.
+* **Canvas Background**: `#1a1b26` (midnight navy)
+* **Sidebar / Rails**: `#13141c`
+* **Code / Terminal Inset**: `#16161e`
+* **Text / Headings**: `#c0caf5` (moonlit white)
+* **Accent / Brand**: `#7aa2f7` (electric blue) & `#7dcfff` (cyan)
+* **Muted / Captions**: `#787c99`
 
-### 2. 🏎️ Diablo Dreams (`omarchy-diablo`)
-> Inspired by the Lamborghini Diablo 6.0.
+### 2. ☕ Catppuccin Mocha (`omarchy-catppuccin`)
+> The developer community's beloved pastel palette.
 
-* **Aesthetic**: Dark, golden-brown luxury mechanical tones.
-* **Canvas Background**: `#100e0a` (golden deep black)
-* **Sidebar / Rails**: `#0c0b08`
-* **Code / Terminal Inset**: `#080705`
-* **Text / Headings**: `#FEF2C9` (rich warm cream)
-* **Accent / Brand**: `#ab6a57` (terracotta)
-* **Muted / Captions**: `#817a6b`
+* **Aesthetic**: Velvety dark slate canvas with pastel mauve, sapphire blue, and peach.
+* **Canvas Background**: `#1e1e2e` (crust slate)
+* **Sidebar / Rails**: `#11111b`
+* **Code / Terminal Inset**: `#181825`
+* **Text / Headings**: `#cdd6f4` (soft text)
+* **Accent / Brand**: `#cba6f7` (mauve) & `#89b4fa` (sapphire)
+* **Muted / Captions**: `#7f849c`
 
-### 3. ⚡ Zonda Zoom (`omarchy-zonda`)
-> Inspired by the Pagani Zonda HH.
+### 3. ❄️ Nord (`omarchy-nord`)
+> Arctic north-bluish clean minimalism.
 
-* **Aesthetic**: Carbon black, muted steel surfaces, and icy blue accents.
-* **Canvas Background**: `#141313` (carbon black)
-* **Sidebar / Rails**: `#0f0e0e`
-* **Code / Terminal Inset**: `#0a0a0a`
-* **Text / Headings**: `#F6F4EC` (warm ivory)
-* **Accent / Brand**: `#6b7fbe` (icy blue)
-* **Muted / Captions**: `#a39c9c`
+* **Aesthetic**: Polar night dark canvas with frost cyan and snow storm white text.
+* **Canvas Background**: `#2e3440` (polar night)
+* **Sidebar / Rails**: `#242933`
+* **Code / Terminal Inset**: `#242933`
+* **Text / Headings**: `#eceff4` (snow storm)
+* **Accent / Brand**: `#88c0d0` (frost cyan) & `#81a1c1` (frost blue)
+* **Muted / Captions**: `#9aa3b2`
 
-### 4. 🐎 Jade Horse (`omarchy-jade`)
-> Inspired by Chinese Year of the Horse motifs.
+### 4. 📻 Gruvbox Dark (`omarchy-gruvbox`)
+> Legendary retro terminal warmth.
 
-* **Aesthetic**: Deep pine/black-green surfaces with celadon and nephrite jade accents.
-* **Canvas Background**: `#0e1411` (pine black)
-* **Sidebar / Rails**: `#090e0c`
-* **Code / Terminal Inset**: `#050807`
-* **Text / Headings**: `#E8F0EA` (pale celadon)
-* **Accent / Brand**: `#5b9e7d` (nephrite jade)
-* **Muted / Captions**: `#79887e`
+* **Aesthetic**: Deep warm dark wood canvas with vibrant orange and parchment text.
+* **Canvas Background**: `#282828` (dark wood)
+* **Sidebar / Rails**: `#1d2021`
+* **Code / Terminal Inset**: `#1d2021`
+* **Text / Headings**: `#ebdbb2` (parchment)
+* **Accent / Brand**: `#fe8019` (vibrant orange) & `#b8bb26` (olive green)
+* **Muted / Captions**: `#a89984`
+
+### 5. 🌸 Rosé Pine (`omarchy-rosepine`)
+> Soho minimalist pine aesthetic.
+
+* **Aesthetic**: Dark pine canvas with soft rose, seafoam teal, and lilac iris accents.
+* **Canvas Background**: `#191724` (pine base)
+* **Sidebar / Rails**: `#14121d`
+* **Code / Terminal Inset**: `#14121d`
+* **Text / Headings**: `#e0def4` (pine text)
+* **Accent / Brand**: `#ebbcba` (soft rose) & `#9ccfd8` (seafoam)
+* **Muted / Captions**: `#7c7895`
+
+### 6. 🌊 Kanagawa (`omarchy-kanagawa`)
+> Japanese woodblock sumi-e ink aesthetic inspired by Katsushika Hokusai.
+
+* **Aesthetic**: Deep sumi-e ink canvas with wave blue and spring green.
+* **Canvas Background**: `#1f1f28` (sumi ink)
+* **Sidebar / Rails**: `#16161d`
+* **Code / Terminal Inset**: `#16161d`
+* **Text / Headings**: `#dcd7ba` (fuji white)
+* **Accent / Brand**: `#7e9cd8` (wave blue) & `#98bb6c` (spring green)
+* **Muted / Captions**: `#8a8980`
 
 ---
 

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { OMARCHY_THEMES, type OmarchyThemeDefinition } from '../palettes/index.ts'
+import { OMARCHY_THEMES, type OmarchyThemeDefinition, DEFAULT_OMARCHY_THEME } from '../palettes/index.ts'
+
+const STORAGE_KEY = 'dsh-omarchy-active-theme'
 
 interface ThemeRuntimeLike {
   getTheme(): { preference: string; active?: { id: string } }
@@ -12,32 +14,55 @@ interface SelectorProps {
   onThemeChange?: (id: string) => void
 }
 
+export function applyThemeDirectly(t: OmarchyThemeDefinition) {
+  if (typeof document === 'undefined') return
+  document.body.dataset.omarchyTheme = t.id
+  for (const [key, val] of Object.entries(t.tokens)) {
+    document.body.style.setProperty(key, val)
+  }
+}
+
+export function clearThemeDirectly() {
+  if (typeof document === 'undefined') return
+  delete document.body.dataset.omarchyTheme
+  // Remove known tokens
+  for (const t of OMARCHY_THEMES) {
+    for (const key of Object.keys(t.tokens)) {
+      document.body.style.removeProperty(key)
+    }
+  }
+}
+
 export function OmarchyThemeSelector({ theme }: SelectorProps) {
   const [currentId, setCurrentId] = useState<string>(() => {
     try {
+      const stored = localStorage.getItem(STORAGE_KEY)
+      if (stored) return stored
       const snap = theme.getTheme()
-      return snap.preference || snap.active?.id || 'system'
+      return snap.preference || snap.active?.id || DEFAULT_OMARCHY_THEME.id
     } catch {
-      return 'system'
+      return DEFAULT_OMARCHY_THEME.id
     }
   })
 
   useEffect(() => {
-    // Poll or sync if event not directly on component
     const interval = setInterval(() => {
       try {
-        const snap = theme.getTheme()
-        const id = snap.preference || snap.active?.id || 'system'
-        setCurrentId(id)
+        const stored = localStorage.getItem(STORAGE_KEY)
+        if (stored && stored !== currentId) {
+          setCurrentId(stored)
+        }
       } catch {}
     }, 500)
     return () => clearInterval(interval)
-  }, [theme])
+  }, [currentId])
 
   const handleSelect = (t: OmarchyThemeDefinition) => {
     try {
-      theme.setTheme(t.id)
+      localStorage.setItem(STORAGE_KEY, t.id)
       setCurrentId(t.id)
+      applyThemeDirectly(t)
+      theme.setTheme(t.id)
     } catch (e) {
       console.error('[dsh-theme-omarchy] Failed to apply theme:', e)
     }
@@ -45,8 +70,10 @@ export function OmarchyThemeSelector({ theme }: SelectorProps) {
 
   const handleReset = () => {
     try {
-      theme.setTheme('system')
+      localStorage.removeItem(STORAGE_KEY)
       setCurrentId('system')
+      clearThemeDirectly()
+      theme.setTheme('system')
     } catch (e) {
       console.error('[dsh-theme-omarchy] Failed to reset theme:', e)
     }
@@ -70,7 +97,7 @@ export function OmarchyThemeSelector({ theme }: SelectorProps) {
       <div className="omarchy-header">
         <div className="omarchy-title">
           <span>Omarchy Design</span>
-          <span className="omarchy-badge">Opinionated</span>
+          <span className="omarchy-badge">Curated Lineup</span>
         </div>
       </div>
 
@@ -106,14 +133,14 @@ export function OmarchyThemeSelector({ theme }: SelectorProps) {
       <div className="omarchy-actions">
         {isOmarchyActive && (
           <button type="button" className="omarchy-btn-reset" onClick={handleReset}>
-            Restore System Default
+            Restore Default Appearance
           </button>
         )}
         <button
           type="button"
           className="omarchy-font-toggle"
           onClick={handleApplyFonts}
-          title="Apply JetBrains Mono / SF Mono for Code & Terminal"
+          title="Apply JetBrains Mono & SF Mono"
         >
           Use Omarchy Typography
         </button>

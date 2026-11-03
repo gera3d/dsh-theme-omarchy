@@ -1,16 +1,70 @@
 /* ==========================================================================
-   dsh-theme-omarchy: Opinionated Visual Design System
+   dsh-theme-omarchy: Authentic Opinionated Visual Design System
    Inspired by David Heinemeier Hansson's (DHH) Omarchy Linux Distribution
    ========================================================================== */
 
 /* ── 1. Global Atmospheric Canvas & Lighting ── */
 body[data-omarchy-theme] {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Theme 1: Giants — Warm ink on aged paper with sepia ambient lighting */
+/* 1. Tokyo Night — Omarchy's Flagship Default */
+body[data-omarchy-theme="omarchy-tokyonight"] {
+  background-color: #1a1b26 !important;
+  background-image: 
+    radial-gradient(ellipse 90% 55% at 50% -10%, rgba(122, 162, 247, 0.18), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(187, 154, 247, 0.12), transparent 60%) !important;
+  background-attachment: fixed !important;
+}
+
+/* 2. Catppuccin Mocha — Velvety slate with pastel mauve & sapphire */
+body[data-omarchy-theme="omarchy-catppuccin"] {
+  background-color: #1e1e2e !important;
+  background-image: 
+    radial-gradient(ellipse 90% 55% at 50% -10%, rgba(203, 166, 247, 0.18), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(137, 180, 250, 0.12), transparent 60%) !important;
+  background-attachment: fixed !important;
+}
+
+/* 3. Nord — Arctic polar night with frost cyan & snow storm */
+body[data-omarchy-theme="omarchy-nord"] {
+  background-color: #2e3440 !important;
+  background-image: 
+    radial-gradient(ellipse 90% 55% at 50% -10%, rgba(136, 192, 208, 0.18), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(129, 161, 193, 0.12), transparent 60%) !important;
+  background-attachment: fixed !important;
+}
+
+/* 4. Gruvbox Dark — Retro terminal warmth with vibrant orange */
+body[data-omarchy-theme="omarchy-gruvbox"] {
+  background-color: #282828 !important;
+  background-image: 
+    radial-gradient(ellipse 90% 55% at 50% -10%, rgba(254, 128, 25, 0.18), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(184, 187, 38, 0.12), transparent 60%) !important;
+  background-attachment: fixed !important;
+}
+
+/* 5. Rosé Pine — Soho minimalist pine with soft rose & seafoam */
+body[data-omarchy-theme="omarchy-rosepine"] {
+  background-color: #191724 !important;
+  background-image: 
+    radial-gradient(ellipse 90% 55% at 50% -10%, rgba(235, 188, 186, 0.18), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(156, 207, 216, 0.12), transparent 60%) !important;
+  background-attachment: fixed !important;
+}
+
+/* 6. Kanagawa — Japanese sumi-e ink with wave blue & spring green */
+body[data-omarchy-theme="omarchy-kanagawa"] {
+  background-color: #1f1f28 !important;
+  background-image: 
+    radial-gradient(ellipse 90% 55% at 50% -10%, rgba(126, 156, 216, 0.18), transparent 70%),
+    radial-gradient(circle at 100% 100%, rgba(152, 187, 108, 0.12), transparent 60%) !important;
+  background-attachment: fixed !important;
+}
+
+/* 7. Giants — Classic vintage ink on aged paper */
 body[data-omarchy-theme="omarchy-giants"] {
   background-color: #27241f !important;
   background-image: 
@@ -19,47 +73,19 @@ body[data-omarchy-theme="omarchy-giants"] {
   background-attachment: fixed !important;
 }
 
-/* Theme 2: Diablo Dreams — Lamborghini Diablo golden-bronze glow */
-body[data-omarchy-theme="omarchy-diablo"] {
-  background-color: #100e0a !important;
-  background-image: 
-    radial-gradient(ellipse 85% 50% at 50% -10%, rgba(171, 106, 87, 0.16), transparent 70%),
-    radial-gradient(circle at 95% 95%, rgba(40, 38, 35, 0.25), transparent 50%) !important;
-  background-attachment: fixed !important;
-}
-
-/* Theme 3: Zonda Zoom — Pagani carbon black with icy blue halo */
-body[data-omarchy-theme="omarchy-zonda"] {
-  background-color: #141313 !important;
-  background-image: 
-    radial-gradient(ellipse 85% 50% at 50% -10%, rgba(107, 127, 190, 0.18), transparent 70%),
-    radial-gradient(circle at 100% 100%, rgba(10, 10, 10, 0.8), transparent 60%) !important;
-  background-attachment: fixed !important;
-}
-
-/* Theme 4: Jade Horse — Deep pine forest with glowing nephrite jade */
-body[data-omarchy-theme="omarchy-jade"] {
-  background-color: #0e1411 !important;
-  background-image: 
-    radial-gradient(ellipse 85% 50% at 50% -10%, rgba(91, 158, 125, 0.16), transparent 70%),
-    radial-gradient(circle at 100% 100%, rgba(5, 8, 7, 0.8), transparent 60%) !important;
-  background-attachment: fixed !important;
-}
-
 /* ── 2. Hyprland-Inspired Tiling Windows & Floating Separation ── */
 body[data-omarchy-theme] [class*="sidebarCol"],
 body[data-omarchy-theme] nav {
   background: var(--dsw-specific-sidebar-fill) !important;
   border-right: 1px solid var(--dsw-alias-border-l1) !important;
-  backdrop-filter: blur(20px) !important;
+  backdrop-filter: blur(24px) !important;
 }
 
-/* Subtle hairline divider between rails and panels */
 body[data-omarchy-theme] [class*="headerActions"],
 body[data-omarchy-theme] [class*="titleBar"],
 body[data-omarchy-theme] header {
   border-bottom: 1px solid var(--dsw-alias-border-l1) !important;
-  backdrop-filter: blur(16px) !important;
+  backdrop-filter: blur(20px) !important;
 }
 
 /* Tactile Session and Panel Nav Rows */
@@ -88,7 +114,7 @@ body[data-omarchy-theme] [data-composer-card="true"] {
   border: 1px solid var(--dsw-alias-border-l2) !important;
   border-radius: 16px !important;
   background: var(--dsw-alias-bg-layer-1) !important;
-  backdrop-filter: blur(28px) saturate(150%) !important;
+  backdrop-filter: blur(28px) saturate(160%) !important;
   box-shadow: 
     0 16px 48px -12px rgba(0, 0, 0, 0.65),
     0 0 0 1px var(--dsw-alias-border-l1),
@@ -107,7 +133,6 @@ body[data-omarchy-theme] [data-composer-card="true"]:focus-within {
   transform: translateY(-2px) !important;
 }
 
-/* Composer text styling */
 body[data-omarchy-theme] [data-composer-card="true"] [contenteditable="true"],
 body[data-omarchy-theme] [data-composer-card="true"] textarea {
   color: var(--dsw-alias-label-primary) !important;
@@ -116,7 +141,6 @@ body[data-omarchy-theme] [data-composer-card="true"] textarea {
   font-size: 14px !important;
 }
 
-/* Composer action buttons */
 body[data-omarchy-theme] [data-composer-card="true"] button {
   border-radius: 8px !important;
   transition: all 0.15s ease !important;
@@ -141,13 +165,6 @@ body[data-omarchy-theme] [class*="bubble"] {
   color: var(--dsw-alias-label-primary) !important;
 }
 
-/* User Message bubble distinction */
-body[data-omarchy-theme] [class*="userMessage"],
-body[data-omarchy-theme] [class*="turnSpacer"] + div [class*="bubble"] {
-  border-color: var(--dsw-alias-border-l3) !important;
-}
-
-/* Markdown Headings */
 body[data-omarchy-theme] h1,
 body[data-omarchy-theme] h2,
 body[data-omarchy-theme] h3,
@@ -163,7 +180,6 @@ body[data-omarchy-theme] h2 {
   margin-top: 24px !important;
 }
 
-/* Markdown Blockquotes */
 body[data-omarchy-theme] blockquote {
   border-left: 3px solid var(--dsw-alias-brand-primary) !important;
   background: var(--dsw-alias-interactive-bg-hover) !important;
@@ -174,7 +190,7 @@ body[data-omarchy-theme] blockquote {
   margin: 12px 0 !important;
 }
 
-/* ── 5. Terminal-Grade Code Blocks (Ghostty / Neovim Vibe) ── */
+/* ── 5. Terminal-Grade Code Blocks (Ghostty / Neovim Craft) ── */
 body[data-omarchy-theme] pre {
   border: 1px solid var(--dsw-alias-border-l2) !important;
   border-radius: 10px !important;
@@ -193,7 +209,6 @@ body[data-omarchy-theme] pre code {
   line-height: 1.6 !important;
 }
 
-/* Inline code pill */
 body[data-omarchy-theme] p code,
 body[data-omarchy-theme] li code {
   background: var(--dsw-alias-markdown-inline-code) !important;
@@ -239,7 +254,6 @@ body[data-omarchy-theme] [class*="dropdown"] {
     inset 0 1px 0 0 rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Buttons inside Dialogs */
 body[data-omarchy-theme] button[data-primary="true"],
 body[data-omarchy-theme] button[class*="primary"] {
   background: var(--dsw-alias-brand-primary) !important;

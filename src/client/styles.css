@@ -22,12 +22,12 @@
 
 .omarchy-badge {
   font-size: 10px;
-  font-weight: 500;
-  padding: 1px 6px;
+  font-weight: 600;
+  padding: 1px 7px;
   border-radius: 999px;
-  background: rgba(151, 120, 109, 0.2);
-  color: var(--dsw-alias-brand-primary, #97786d);
-  letter-spacing: 0.3px;
+  background: rgba(122, 162, 247, 0.2);
+  color: var(--dsw-alias-brand-primary, #7aa2f7);
+  letter-spacing: 0.4px;
   text-transform: uppercase;
 }
 
@@ -39,7 +39,7 @@
 
 @media (min-width: 640px) {
   .omarchy-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -47,49 +47,52 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 8px 10px;
-  border-radius: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
   border: 1px solid var(--dsw-alias-border-l2, rgba(255, 255, 255, 0.1));
   background: var(--dsw-alias-bg-layer-1, rgba(255, 255, 255, 0.04));
   cursor: pointer;
   text-align: left;
-  transition: all 0.15s ease;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
 }
 
 .omarchy-card:hover {
-  border-color: var(--dsw-alias-brand-primary, #97786d);
-  background: var(--dsw-alias-bg-layer-2, rgba(255, 255, 255, 0.07));
+  border-color: var(--dsw-alias-brand-primary, #7aa2f7);
+  background: var(--dsw-alias-bg-layer-2, rgba(255, 255, 255, 0.08));
+  transform: translateY(-1px);
 }
 
 .omarchy-card[data-active="true"] {
-  border-color: var(--dsw-alias-brand-primary, #97786d);
-  box-shadow: 0 0 0 2px var(--dsw-alias-brand-primary, #97786d);
+  border-color: var(--dsw-alias-brand-primary, #7aa2f7);
+  box-shadow: 0 0 0 2px var(--dsw-alias-brand-primary, #7aa2f7);
+  background: var(--dsw-alias-bg-layer-2, rgba(255, 255, 255, 0.08));
 }
 
 .omarchy-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .omarchy-swatch {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  border: 1.5px solid var(--dsw-alias-border-l3, rgba(255, 255, 255, 0.2));
+  border: 2px solid var(--dsw-alias-border-l3, rgba(255, 255, 255, 0.2));
   flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 .omarchy-active-indicator {
   font-size: 11px;
-  color: var(--dsw-alias-brand-primary, #97786d);
+  color: var(--dsw-alias-brand-primary, #7aa2f7);
   font-weight: 600;
 }
 
 .omarchy-name {
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
   color: var(--dsw-alias-label-primary, inherit);
   white-space: nowrap;
@@ -98,48 +101,39 @@
 }
 
 .omarchy-subtitle {
-  font-size: 10px;
+  font-size: 10.5px;
   color: var(--dsw-alias-label-secondary, rgba(255, 255, 255, 0.6));
-  line-height: 1.3;
-  margin-top: 2px;
-  white-space: nowrap;
+  line-height: 1.35;
+  margin-top: 3px;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .omarchy-actions {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
-.omarchy-btn-reset {
-  font-size: 11px;
-  padding: 3px 8px;
-  border-radius: 6px;
-  border: 1px solid var(--dsw-alias-border-l2, rgba(255, 255, 255, 0.15));
-  background: transparent;
-  color: var(--dsw-alias-label-secondary, inherit);
-  cursor: pointer;
-}
-
-.omarchy-btn-reset:hover {
-  background: var(--dsw-alias-interactive-bg-hover, rgba(255, 255, 255, 0.05));
-  color: var(--dsw-alias-label-primary, inherit);
-}
-
+.omarchy-btn-reset,
 .omarchy-font-toggle {
-  font-size: 11px;
-  padding: 3px 8px;
+  font-size: 11.5px;
+  padding: 4px 10px;
   border-radius: 6px;
   border: 1px solid var(--dsw-alias-border-l2, rgba(255, 255, 255, 0.15));
-  background: transparent;
+  background: var(--dsw-alias-bg-layer-1, rgba(255, 255, 255, 0.03));
   color: var(--dsw-alias-label-secondary, inherit);
   cursor: pointer;
+  transition: all 0.15s ease;
 }
 
+.omarchy-btn-reset:hover,
 .omarchy-font-toggle:hover {
-  background: var(--dsw-alias-interactive-bg-hover, rgba(255, 255, 255, 0.05));
+  background: var(--dsw-alias-interactive-bg-hover, rgba(255, 255, 255, 0.08));
   color: var(--dsw-alias-label-primary, inherit);
+  border-color: var(--dsw-alias-brand-primary, #7aa2f7);
 }

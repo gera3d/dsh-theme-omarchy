@@ -1,7 +1,7 @@
 {
   "name": "dsh-theme-omarchy",
-  "version": "0.1.0",
-  "description": "Opinionated visual themes for DeepSeek Harness (DSH) inspired by Omarchy Linux (Giants, Diablo Dreams, Zonda Zoom, and Jade Horse).",
+  "version": "0.2.0",
+  "description": "Opinionated visual themes for DeepSeek Harness (DSH) inspired by Omarchy Linux (Tokyo Night, Catppuccin Mocha, Nord, Gruvbox Dark, Rosé Pine, and Kanagawa).",
   "author": "Gera Yeremin",
   "license": "MIT",
   "type": "module",
