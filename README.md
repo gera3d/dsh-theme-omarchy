@@ -6,9 +6,17 @@
 
 ## 🌟 Overview
 
-[Omarchy](https://github.com/basecamp/omarchy) pairs Arch Linux and Hyprland with an opinionated, developer-first aesthetic: warm, low-contrast palettes, distraction-free hierarchy, and bespoke themes anchored around computing pioneers, luxury mechanical tones, and organic hues.
+[Omarchy](https://github.com/basecamp/omarchy) pairs Arch Linux and Hyprland with an opinionated, developer-first aesthetic: warm low-contrast palettes, distraction-free hierarchy, and bespoke themes anchored around computing pioneers, luxury mechanical tones, and organic hues.
 
-`dsh-theme-omarchy` packages these visual palettes into a native **Cordis bundle** for **DeepSeek Harness (DSH)**. It hooks cleanly into DSH’s `@deepseek-ai/dsh-client-ui-theme` runtime, re-binding `--dsw-*` semantic tokens across the entire GUI without monkey-patching core binaries.
+`dsh-theme-omarchy` is **not just a flat color-variable swap**. It brings Omarchy's complete design philosophy into **DeepSeek Harness (DSH)**:
+
+- 🌌 **Atmospheric Canvas Lighting**: Subtle radial lighting gradients that produce perceived optical depth behind workspace windows, replacing flat dark slates.
+- 🛸 **Floating Island Composer**: Transforms the message input into an elevated, frosted glass command palette inspired by Omarchy's **Walker** launcher and Raycast.
+- 🪟 **Hyprland Tiling Window Boundaries**: Translucent hairline borders, 28px backdrop blur, and tactile interactive micro-displacements.
+- 📟 **Ghostty-Grade Code Blocks**: Recessed inset shadows, theme-tinted inline pills, and precision `JetBrains Mono` / `SF Mono` stacks.
+- 🎚️ **Precision Micro-Scrollbars**: Discrete 5px floating pills that stay out of your way until engaged.
+
+The bundle hooks cleanly into DSH’s `@deepseek-ai/dsh-client-ui-theme` runtime, synchronizing `body[data-omarchy-theme]` across the entire GUI without monkey-patching core binaries.
 
 ---
 
