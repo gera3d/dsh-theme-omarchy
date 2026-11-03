@@ -1,0 +1,5 @@
+# dsh-theme-omarchy bundle patch
+# Injects the Omarchy theme provider into the DSH plugin tree.
+- insert:
+    - id: dsh-theme-omarchy
+      name: dsh-theme-omarchy

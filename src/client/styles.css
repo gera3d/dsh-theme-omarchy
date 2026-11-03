@@ -1,0 +1,145 @@
+.omarchy-settings-group {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--dsw-alias-border-l1, rgba(255, 255, 255, 0.08));
+}
+
+.omarchy-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.omarchy-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dsw-alias-label-primary, inherit);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.omarchy-badge {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(151, 120, 109, 0.2);
+  color: var(--dsw-alias-brand-primary, #97786d);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.omarchy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+@media (min-width: 640px) {
+  .omarchy-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.omarchy-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--dsw-alias-border-l2, rgba(255, 255, 255, 0.1));
+  background: var(--dsw-alias-bg-layer-1, rgba(255, 255, 255, 0.04));
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.omarchy-card:hover {
+  border-color: var(--dsw-alias-brand-primary, #97786d);
+  background: var(--dsw-alias-bg-layer-2, rgba(255, 255, 255, 0.07));
+}
+
+.omarchy-card[data-active="true"] {
+  border-color: var(--dsw-alias-brand-primary, #97786d);
+  box-shadow: 0 0 0 2px var(--dsw-alias-brand-primary, #97786d);
+}
+
+.omarchy-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.omarchy-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--dsw-alias-border-l3, rgba(255, 255, 255, 0.2));
+  flex-shrink: 0;
+}
+
+.omarchy-active-indicator {
+  font-size: 11px;
+  color: var(--dsw-alias-brand-primary, #97786d);
+  font-weight: 600;
+}
+
+.omarchy-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dsw-alias-label-primary, inherit);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.omarchy-subtitle {
+  font-size: 10px;
+  color: var(--dsw-alias-label-secondary, rgba(255, 255, 255, 0.6));
+  line-height: 1.3;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.omarchy-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.omarchy-btn-reset {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--dsw-alias-border-l2, rgba(255, 255, 255, 0.15));
+  background: transparent;
+  color: var(--dsw-alias-label-secondary, inherit);
+  cursor: pointer;
+}
+
+.omarchy-btn-reset:hover {
+  background: var(--dsw-alias-interactive-bg-hover, rgba(255, 255, 255, 0.05));
+  color: var(--dsw-alias-label-primary, inherit);
+}
+
+.omarchy-font-toggle {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--dsw-alias-border-l2, rgba(255, 255, 255, 0.15));
+  background: transparent;
+  color: var(--dsw-alias-label-secondary, inherit);
+  cursor: pointer;
+}
+
+.omarchy-font-toggle:hover {
+  background: var(--dsw-alias-interactive-bg-hover, rgba(255, 255, 255, 0.05));
+  color: var(--dsw-alias-label-primary, inherit);
+}
